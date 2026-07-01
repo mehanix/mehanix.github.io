@@ -6,54 +6,106 @@ document.fonts.ready.then(() => {
 // --- Data Architecture ---
 const projectsData = [
   {
-    id: "alpha",
-    title: "Project Alpha",
-    description: "Generative audio-visual installation using WebGL and WebAudio.",
-    staticImage: "https://picsum.photos/seed/1/400/300",
-    animatedImage: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif",
-    github: "https://github.com/placeholder",
-    demo: "https://example.com",
-    photos: ["https://picsum.photos/seed/1a/800/450", "https://picsum.photos/seed/1b/800/450", "https://picsum.photos/seed/1c/800/450"]
+    id: "arcada",
+    title: "Arcada",
+    description: "An open-source floor planner app for designing rooms and houses.",
+    staticImage: "./assets/projects/arcada/screenshot1.png",
+    animatedImage: "./assets/projects/arcada/screenshot1.png",
+    github: "https://github.com/mehanix/arcada",
+    demo: "https://arcada.nicoleta.cc",
+    photos: ["./assets/projects/arcada/screenshot1.png", "./assets/projects/arcada/logo.png", "./assets/projects/arcada/add-wall.gif", "./assets/projects/arcada/edit-walls.gif", "./assets/projects/arcada/edit-furniture.gif", "./assets/projects/arcada/add-door.gif", "./assets/projects/arcada/measure-tool.gif"]
   },
   {
-    id: "beta",
-    title: "Project Beta",
-    description: "Real-time particle simulation for live performances.",
-    staticImage: "https://picsum.photos/seed/2/400/300",
-    animatedImage: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif",
-    github: "https://github.com/placeholder",
-    demo: "https://example.com",
-    photos: ["https://picsum.photos/seed/2a/800/450", "https://picsum.photos/seed/2b/800/450"]
+    id: "learnanatomy",
+    title: "learnAnatomy",
+    description: "Educational software designed for high school students that helps them learn the structure of the human skeleton in 3D.",
+    staticImage: "./assets/projects/learnAnatomy/screenshot2.png",
+    animatedImage: "./assets/projects/learnAnatomy/screenshot2.png",
+    github: "https://github.com/mehanix/learnAnatomy",
+    demo: "https://github.com/mehanix/learnAnatomy",
+    photos: ["https://www.youtube.com/watch?v=4brnc9oPYC8", "./assets/projects/learnAnatomy/screenshot1.png", "./assets/projects/learnAnatomy/screenshot2.png", "./assets/projects/learnAnatomy/screenshot3.png"]
   },
   {
-    id: "gamma",
-    title: "Project Gamma",
-    description: "Interactive projection mapping on geometric sculptures.",
-    staticImage: "https://picsum.photos/seed/3/400/300",
-    animatedImage: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif",
-    github: "https://github.com/placeholder",
-    demo: "https://example.com",
-    photos: ["https://picsum.photos/seed/3a/800/450", "https://picsum.photos/seed/3b/800/450", "https://picsum.photos/seed/3c/800/450"]
+    id: "ripple",
+    title: "Ripple",
+    description: "A cross-platform mobile app that aims to help you get into the habit of learning new things every day.",
+    staticImage: "./assets/projects/ripple/logo.png",
+    animatedImage: "./assets/projects/ripple/screenshot1.jpg",
+    github: "https://github.com/mehanix/Ripple",
+    demo: "https://github.com/mehanix/Ripple",
+    photos: ["./assets/projects/ripple/demo.mp4", "./assets/projects/ripple/logo.png", "./assets/projects/ripple/screenshot1.jpg", "./assets/projects/ripple/gHdR8z3.jpg", "./assets/projects/ripple/sK0bcDZ.jpg"]
   },
   {
-    id: "delta",
-    title: "Project Delta",
-    description: "Data physicalization using custom robotics.",
-    staticImage: "https://picsum.photos/seed/4/400/300",
-    animatedImage: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif",
-    github: "https://github.com/placeholder",
-    demo: "https://example.com",
-    photos: ["https://picsum.photos/seed/4a/800/450", "https://picsum.photos/seed/4b/800/450"]
+    id: "pancaketower",
+    title: "Pancake Tower",
+    description: "A puzzle game with level creation support where the player has to perform different tasks across two gamemodes: Puzzle and Maze.",
+    staticImage: "./assets/projects/pancaketower/ss1.png",
+    animatedImage: "./assets/projects/pancaketower/menu.gif",
+    github: "https://github.com/mehanix/PancakeTower",
+    demo: "https://github.com/mehanix/PancakeTower",
+    photos: ["./assets/projects/pancaketower/menu.gif", "./assets/projects/pancaketower/ss1.png", "./assets/projects/pancaketower/ss2.png", "./assets/projects/pancaketower/ss3.png"]
   },
   {
-    id: "epsilon",
-    title: "Project Epsilon",
-    description: "Immersive VR experience exploring algorithmic architecture.",
-    staticImage: "https://picsum.photos/seed/5/400/300",
-    animatedImage: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif",
-    github: "https://github.com/placeholder",
-    demo: "https://example.com",
-    photos: ["https://picsum.photos/seed/5a/800/450", "https://picsum.photos/seed/5b/800/450", "https://picsum.photos/seed/5c/800/450"]
+    id: "downbeat",
+    title: "Downbeat",
+    description: "A small playable virtual piano written in C++ using SFML. Record, save, load and play songs.",
+    staticImage: "./assets/projects/downbeat/screenshot1.png",
+    animatedImage: "./assets/projects/downbeat/screenshot1.png",
+    github: "https://github.com/mehanix/Downbeat",
+    demo: "https://github.com/mehanix/Downbeat",
+    photos: ["./assets/projects/downbeat/screenshot1.png"]
+  },
+  {
+    id: "caverun",
+    title: "Cave Run",
+    description: "A hardware game written in C++ for Arduino with an 8x8 LED matrix. Escape as many rooms as you can in 60 seconds by collecting keys and using your radar to avoid buried bombs!",
+    staticImage: "./assets/projects/caverun/build.png",
+    animatedImage: "./assets/projects/caverun/build.png",
+    github: "https://github.com/mehanix/Cave-Run",
+    demo: "https://github.com/mehanix/Cave-Run",
+    photos: ["https://www.youtube.com/watch?v=kI80q4XZILo", "./assets/projects/caverun/logo.png", "./assets/projects/caverun/instructions.png", "./assets/projects/caverun/build.png"]
+  },
+  {
+    id: "bubblemancer",
+    title: "BubbleMancer",
+    description: "A Global Game Jam 2024 game where a BubbleMancer climbs the ancient Wizard Spire to prove his peers wrong.",
+    staticImage: "./assets/projects/bubblemancer/image_0.png",
+    animatedImage: "./assets/projects/bubblemancer/image_1.png",
+    github: "https://github.com/mehanix/bubblemancer",
+    demo: "https://globalgamejam.org/games/2024/bubblemancer-4-0",
+    photos: ["./assets/projects/bubblemancer/image_0.png", "./assets/projects/bubblemancer/image_1.png", "./assets/projects/bubblemancer/image_2.png", "./assets/projects/bubblemancer/image_3.png", "./assets/projects/bubblemancer/image_4.png", "./assets/projects/bubblemancer/image_5.png"]
+  },
+  {
+    id: "dhrw",
+    title: "DHRW ~ Visual Data Pipelines",
+    description: "A proof-of-concept for a low-code, IaaS platform to let you visually create data processing pipelines and deploy them to the cloud via Docker containers.",
+    staticImage: "./assets/projects/dhrw/image_0.png",
+    animatedImage: "./assets/projects/dhrw/image_1.png",
+    containImage: true,
+    github: "https://github.com/mehanix/dhrw",
+    demo: "https://www.youtube.com/watch?v=6WjEC7rRUQU",
+    photos: ["https://www.youtube.com/watch?v=6WjEC7rRUQU", "./assets/projects/dhrw/image_0.png", "./assets/projects/dhrw/image_1.png", "./assets/projects/dhrw/image_2.png", "./assets/projects/dhrw/image_3.png", "./assets/projects/dhrw/image_4.png", "./assets/projects/dhrw/image_5.png", "./assets/projects/dhrw/image_6.png", "./assets/projects/dhrw/image_7.png", "./assets/projects/dhrw/image_8.png", "./assets/projects/dhrw/image_9.png", "./assets/projects/dhrw/image_10.jpg"]
+  },
+  {
+    id: "blackout",
+    title: "Blackout",
+    description: "A randomly-generated maze game where you need to escape dark mazes, while equipped with only a lantern.",
+    staticImage: "./assets/projects/blackout/image_0.png",
+    animatedImage: "./assets/projects/blackout/image_0.png",
+    github: "https://github.com/mehanix/Blackout",
+    demo: "https://www.youtube.com/watch?v=1fq4Lg6IOio",
+    photos: ["https://www.youtube.com/watch?v=1fq4Lg6IOio", "./assets/projects/blackout/image_0.png"]
+  },
+  {
+    id: "tidycobra",
+    title: "TidyCobra",
+    description: "A Python-based utility that automates the sorting of your files into designated folders like Pictures, Music, Documents, etc., keeping your folders organized.",
+    staticImage: "./assets/projects/tidycobra/ui_1.png",
+    animatedImage: "./assets/projects/tidycobra/ui_1.png",
+    containImage: true,
+    github: "https://github.com/mehanix/tidycobra",
+    demo: "https://github.com/mehanix/tidycobra",
+    photos: ["./assets/projects/tidycobra/ui_1.png", "./assets/projects/tidycobra/ui_2.png", "./assets/projects/tidycobra/banner.png"]
   }
 ];
 
@@ -66,10 +118,12 @@ const modalContact = document.getElementById('modal-contact');
 
 function openModal(modal) {
   modal.classList.remove('hidden');
+  document.body.classList.add('modal-open');
 }
 
 function closeModal(modal) {
   modal.classList.add('hidden');
+  document.body.classList.remove('modal-open');
   const video = document.getElementById('showreel-video');
   if (modal === modalShowreel && video) {
     video.pause();
@@ -89,7 +143,7 @@ function generateDOM() {
   projectsData.forEach(project => {
     // Generate Carousel Item
     carouselHTML += `
-      <div class="carousel-item project-trigger" data-id="${project.id}" 
+      <div class="carousel-item project-trigger ${project.containImage ? 'contain-img' : ''}" data-id="${project.id}" 
            style="--static: url('${project.staticImage}'); --animated: url('${project.animatedImage}');">
       </div>
     `;
@@ -169,7 +223,22 @@ document.addEventListener('click', (e) => {
       if (projectModalTrack) {
         maxModalSlides = project.photos.length;
         currentModalSlide = 0;
-        projectModalTrack.innerHTML = project.photos.map(url => `<img src="${url}" alt="Project photo">`).join('');
+        projectModalTrack.innerHTML = project.photos.map(url => {
+          if (url.includes('youtube.com') || url.includes('youtu.be')) {
+            let videoId = "";
+            if (url.includes('youtube.com/watch?v=')) {
+              videoId = url.split('v=')[1].split('&')[0];
+            } else if (url.includes('youtu.be/')) {
+              videoId = url.split('.be/')[1].split('?')[0];
+            }
+            if(videoId) {
+              return `<iframe src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%; aspect-ratio: 16/9;"></iframe>`;
+            }
+          } else if (url.endsWith('.mp4') || url.endsWith('.webm')) {
+            return `<video src="${url}" controls autoplay muted loop></video>`;
+          }
+          return `<img src="${url}" alt="Project photo">`;
+        }).join('');
         updateModalCarousel();
       }
       openModal(modalProjectDetails);
