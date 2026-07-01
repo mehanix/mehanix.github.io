@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicoleta Ciaușu - Creative Code / Interactive Media / Software Engineering</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- cables.gl background -->
+    <div id="cables-canvas-container">
+      <!-- Canvas dynamically injected here -->
+    </div>
+
+    <div id="app">
+      <button id="btn-change-bg" class="btn change-bg-btn">
+        <span class="btn-label">next visual</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+        </svg>
+      </button>
+
+      <main class="hero">
+        <div class="hero-content">
+          <h1 class="title">
+            <span class="name">NICOLETA CIAUȘU</span>
+            <span class="subtitle">
+              <span class="sub-item">creative code</span>
+              <span class="slash">/</span>
+              <span class="sub-item">interactive media</span>
+              <span class="slash">/</span>
+              <span class="sub-item">software engineering</span>
+            </span>
+          </h1>
+          <nav class="nav-buttons">
+            <button id="btn-portfolio" class="btn">portfolio</button>
+            <span class="separator">•</span>
+            <button id="btn-showreel" class="btn">showreel</button>
+            <span class="separator">•</span>
+            <button id="btn-contact" class="btn">contact</button>
+          </nav>
+        </div>
+      </main>
+
+      <!-- Linear Carousel -->
+      <div id="linear-carousel">
+        <div class="carousel-track" id="main-carousel-track">
+          <!-- Dynamically populated from JS -->
+        </div>
+      </div>
+
+      <!-- Modals -->
+      <div id="modal-portfolio-list" class="modal hidden">
+        <div class="modal-content portfolio-list-content">
+          <button class="close-btn">&times;</button>
+          <h2 style="margin-bottom: 2rem;">Projects</h2>
+          <div class="portfolio-list" id="portfolio-list-container">
+            <!-- Dynamically populated from JS -->
+          </div>
+        </div>
+      </div>
+
+      <div id="modal-project-details" class="modal hidden">
+        <div class="modal-content">
+          <button class="close-btn">&times;</button>
+          <h2 id="project-modal-title">Project Title</h2>
+          
+          <div class="modal-carousel">
+            <button class="modal-carousel-nav prev" id="modal-prev">&larr;</button>
+            <div class="modal-carousel-track" id="project-modal-track">
+              <!-- Dynamically injected photos -->
+            </div>
+            <button class="modal-carousel-nav next" id="modal-next">&rarr;</button>
+          </div>
+
+          <p id="project-modal-desc">Project description goes here.</p>
+          
+          <div class="project-links">
+            <a href="#" id="project-modal-github" target="_blank" class="btn">github</a>
+            <span class="separator">•</span>
+            <a href="#" id="project-modal-demo" target="_blank" class="btn">live demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="modal-showreel" class="modal hidden">
+        <div class="modal-content video-content">
+          <button class="close-btn">&times;</button>
+          <div class="video-placeholder">
+            <video id="showreel-video" controls>
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div id="modal-contact" class="modal hidden">
+        <div class="modal-content contact-content" style="text-align: center;">
+          <button class="close-btn">&times;</button>
+          <h2 style="margin-bottom: 0.5rem;">Contact</h2>
+          <p style="margin-bottom: 2.5rem; opacity: 0.7; font-size: 1rem; letter-spacing: 0.05em;">available for new opportunities.</p>
+          
+          <div style="margin-bottom: 2rem;">
+            <a href="mailto:hello@nicoleta.cc" class="email-link" style="font-size: 1.5rem; font-weight: 300;">hello@nicoleta.cc</a>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem; opacity: 0.5;">
+            <div style="height: 1px; flex: 1; background: white;"></div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">or contact me via</span>
+            <div style="height: 1px; flex: 1; background: white;"></div>
+          </div>
+
+          <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="contact-form" style="text-align: left;">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
