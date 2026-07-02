@@ -143,8 +143,9 @@ function generateDOM() {
   projectsData.forEach(project => {
     // Generate Carousel Item
     carouselHTML += `
-      <div class="carousel-item project-trigger ${project.containImage ? 'contain-img' : ''}" data-id="${project.id}" 
-           style="--static: url('${project.staticImage}'); --animated: url('${project.animatedImage}');">
+      <div class="carousel-item project-trigger ${project.containImage ? 'contain-img' : ''}" data-id="${project.id}">
+        <img class="carousel-img static" src="${project.staticImage}" alt="${project.title}">
+        <img class="carousel-img animated" src="${project.animatedImage}" alt="${project.title} animated">
       </div>
     `;
     

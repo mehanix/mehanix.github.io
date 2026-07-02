@@ -253,26 +253,42 @@ body.modal-open #linear-carousel.loaded .carousel-track {
   flex: 0 0 auto;
   width: clamp(200px, 25vw, 400px);
   height: 100%;
-  /* Define two backgrounds: static is visible, animated is hidden but forced to preload */
-  background-image: var(--static), var(--animated);
-  background-size: cover, 0px 0px;
-  background-position: center, -9999px -9999px;
-  background-repeat: no-repeat;
   border-radius: 0;
   border: 1px solid rgba(255,255,255,0.2);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   cursor: pointer;
   transition: border-color 0.3s;
+  overflow: hidden;
 }
 
-.carousel-item.contain-img {
-  background-size: contain, 0px 0px;
+.carousel-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.carousel-img.animated {
+  opacity: 0;
+}
+
+.carousel-item.contain-img .carousel-img {
+  object-fit: contain;
   background-color: rgba(40, 40, 40, 0.5);
 }
+
 @media (hover: hover) {
+  .carousel-item:hover .carousel-img.static {
+    opacity: 0;
+  }
+  .carousel-item:hover .carousel-img.animated {
+    opacity: 1;
+  }
   .carousel-item:hover {
-    /* Swap them so animated is visible and static is hidden */
-    background-image: var(--animated), var(--static);
     border-color: rgba(255,255,255,0.5);
   }
 }
