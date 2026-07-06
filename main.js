@@ -175,6 +175,41 @@ projectsData.forEach(p => {
   imagesToPreload.push(p.animatedImage);
 });
 
+let carouselHalfWidth = 0;
+let currentTranslate = 0;
+let isDragging = false;
+let startX = 0;
+let prevTranslate = 0;
+let isHovering = false;
+let isDraggingFlag = false;
+
+function updateCarouselWidth() {
+  if (mainCarouselTrack) {
+    // The track contains 2 duplicated sets of items.
+    carouselHalfWidth = mainCarouselTrack.scrollWidth / 2;
+  }
+}
+
+function autoScroll() {
+  if (!isDragging && !isHovering && !document.body.classList.contains('modal-open')) {
+    currentTranslate -= 0.8; // scroll speed
+  }
+  
+  if (carouselHalfWidth > 0) {
+    // Wrap around for infinite effect
+    if (currentTranslate <= -carouselHalfWidth) {
+      currentTranslate += carouselHalfWidth;
+    } else if (currentTranslate > 0) {
+      currentTranslate -= carouselHalfWidth;
+    }
+  }
+  
+  if (mainCarouselTrack) {
+    mainCarouselTrack.style.transform = `translateX(${currentTranslate}px)`;
+  }
+  requestAnimationFrame(autoScroll);
+}
+
 Promise.all(imagesToPreload.map(url => {
   return new Promise(resolve => {
     const img = new Image();
@@ -184,7 +219,70 @@ Promise.all(imagesToPreload.map(url => {
   });
 })).then(() => {
   document.getElementById('linear-carousel')?.classList.add('loaded');
+  updateCarouselWidth();
+  window.addEventListener('resize', updateCarouselWidth);
+  requestAnimationFrame(autoScroll);
 });
+
+const carouselContainer = document.getElementById('linear-carousel');
+if (carouselContainer) {
+  // Touch Events for Mobile
+  carouselContainer.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    isDraggingFlag = false;
+    startX = e.touches[0].pageX;
+    prevTranslate = currentTranslate;
+  }, { passive: true });
+
+  carouselContainer.addEventListener('touchend', () => {
+    isDragging = false;
+    isHovering = false;
+  });
+
+  carouselContainer.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const walk = (e.touches[0].pageX - startX) * 1.5;
+    if (Math.abs(walk) > 5) {
+      isDraggingFlag = true;
+    }
+    currentTranslate = prevTranslate + walk;
+  }, { passive: true });
+
+  // Mouse Events for Desktop
+  carouselContainer.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    isDraggingFlag = false;
+    startX = e.pageX;
+    prevTranslate = currentTranslate;
+  });
+
+  carouselContainer.addEventListener('mouseleave', () => {
+    isDragging = false;
+    isHovering = false;
+  });
+
+  carouselContainer.addEventListener('mouseenter', () => {
+    isHovering = true;
+  });
+
+  carouselContainer.addEventListener('mouseup', () => {
+    isDragging = false;
+    // reset flag slightly later so click event (which fires after mouseup) is caught
+    setTimeout(() => {
+      isDraggingFlag = false;
+    }, 50);
+  });
+
+  carouselContainer.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const walk = (e.pageX - startX) * 1.5;
+    if (Math.abs(walk) > 5) {
+      isDraggingFlag = true;
+      e.preventDefault(); // Prevent text selection/image dragging when dragging
+    }
+    currentTranslate = prevTranslate + walk;
+  });
+}
 
 // --- Project Details Modal Logic ---
 const projectModalTitle = document.getElementById('project-modal-title');
@@ -210,6 +308,11 @@ document.getElementById('modal-next')?.addEventListener('click', () => {
 
 // Event Delegation for all .project-trigger elements
 document.addEventListener('click', (e) => {
+  if (isDraggingFlag) {
+    e.preventDefault();
+    e.stopPropagation();
+    return;
+  }
   const trigger = e.target.closest('.project-trigger');
   if (trigger) {
     const projectId = trigger.getAttribute('data-id');

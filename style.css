@@ -226,27 +226,16 @@ body::before {
   gap: 2rem;
   padding-right: 2rem;
   width: max-content;
+  cursor: grab;
+  user-select: none;
+  will-change: transform;
 }
 
-#linear-carousel.loaded .carousel-track {
-  -webkit-animation: scrollTrack 45s linear infinite;
-  animation: scrollTrack 45s linear infinite;
+.carousel-track:active {
+  cursor: grabbing;
 }
 
-@media (hover: hover) {
-  .carousel-track:hover {
-    animation-play-state: paused;
-  }
-}
 
-body.modal-open #linear-carousel.loaded .carousel-track {
-  animation-play-state: paused;
-}
-
-@keyframes scrollTrack {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 
 .carousel-item {
   position: relative;
