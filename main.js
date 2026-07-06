@@ -267,8 +267,7 @@ document.addEventListener('keydown', (e) => {
 
 // --- cables.gl Lazy Loading ---
 const cablesPatches = [
-  '/cables/visual1/js/patch.js', // The original visual
-  '/cables/visual2/js/patch.js', // Birth of a star
+  '/cables/visual1/js/patch.js' // The original visual
 ];
 let currentPatchIndex = Math.floor(Math.random() * cablesPatches.length);
 let currentLoadedPatchUrl = null;
