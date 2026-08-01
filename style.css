@@ -212,8 +212,16 @@ body::before {
     rgba(0,0,0,0.2) 98%, rgba(0,0,0,0.2) 99%,
     transparent 99%, transparent 100%
   );
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+}
+
+#linear-carousel.is-dragging,
+#linear-carousel.is-dragging .carousel-item {
+  cursor: grabbing !important;
 }
 
 #linear-carousel.loaded {
@@ -226,26 +234,7 @@ body::before {
   gap: 2rem;
   padding-right: 2rem;
   width: max-content;
-}
-
-#linear-carousel.loaded .carousel-track {
-  -webkit-animation: scrollTrack 45s linear infinite;
-  animation: scrollTrack 45s linear infinite;
-}
-
-@media (hover: hover) {
-  .carousel-track:hover {
-    animation-play-state: paused;
-  }
-}
-
-body.modal-open #linear-carousel.loaded .carousel-track {
-  animation-play-state: paused;
-}
-
-@keyframes scrollTrack {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  will-change: transform;
 }
 
 .carousel-item {
@@ -317,6 +306,7 @@ body.modal-open #linear-carousel.loaded .carousel-track {
   padding: 0;
   text-transform: lowercase;
   letter-spacing: 0.15em;
+  text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -563,6 +553,35 @@ body.modal-open #linear-carousel.loaded .carousel-track {
 
 .project-links .separator {
   font-size: 1rem;
+}
+
+/* Project Tech Stack & Horizontal Divider */
+hr.project-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 1.5rem 0 1.2rem 0;
+  width: 100%;
+}
+
+.project-tech-stack {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+.tech-stack-label {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  margin-right: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.portfolio-list-tech {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.04em;
+  margin-top: 0.5rem;
 }
 
 .modal {

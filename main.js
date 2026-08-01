@@ -8,7 +8,8 @@ const projectsData = [
   {
     id: "arcada",
     title: "Arcada",
-    description: "An open-source floor planner app for designing rooms and houses.",
+    description: "An open-source floor planner for creating 2D/3D interior designs and architectural blueprints. Users can draw and modify walls, place doors and windows, arrange furniture, measure dimensions accurately to scale, and manage multi-story designs with export options.",
+    techStack: "React • Pixi.js • Zustand • Express.js • MongoDB • Mongoose • Docker",
     staticImage: "./assets/projects/arcada/screenshot1.png",
     animatedImage: "./assets/projects/arcada/screenshot1.png",
     github: "https://github.com/mehanix/arcada",
@@ -18,57 +19,59 @@ const projectsData = [
   {
     id: "learnanatomy",
     title: "learnAnatomy",
-    description: "Educational software designed for high school students that helps them learn the structure of the human skeleton in 3D.",
+    description: "An educational 3D software application built to help high school students explore human skeletal anatomy. Features full 3D camera navigation to inspect individual bones, dynamic labeling, and interactive study modes. Includes a 'Guess the Bone' identification quiz and a hands-on skull assembly puzzle to reinforce learning beyond traditional 2D textbooks.",
+    techStack: "Unity 3D • C#",
     staticImage: "./assets/projects/learnAnatomy/screenshot2.png",
     animatedImage: "./assets/projects/learnAnatomy/screenshot2.png",
     github: "https://github.com/mehanix/learnAnatomy",
-    demo: "https://github.com/mehanix/learnAnatomy",
     photos: ["https://www.youtube.com/watch?v=4brnc9oPYC8", "./assets/projects/learnAnatomy/screenshot1.png", "./assets/projects/learnAnatomy/screenshot2.png", "./assets/projects/learnAnatomy/screenshot3.png"]
   },
   {
     id: "ripple",
     title: "Ripple",
-    description: "A cross-platform mobile app that aims to help you get into the habit of learning new things every day.",
+    description: "A cross-platform mobile application designed to help users build a daily learning habit through bite-sized study tracks. Offers short daily lesson cards, habit streak tracking, and customizable learning topics to make personal growth a consistent daily routine.",
+    techStack: "Angular • Ionic Framework • Cordova • TypeScript • SQLite",
     staticImage: "./assets/projects/ripple/logo.png",
     animatedImage: "./assets/projects/ripple/screenshot1.jpg",
     github: "https://github.com/mehanix/Ripple",
-    demo: "https://github.com/mehanix/Ripple",
     photos: ["./assets/projects/ripple/demo.mp4", "./assets/projects/ripple/logo.png", "./assets/projects/ripple/screenshot1.jpg", "./assets/projects/ripple/gHdR8z3.jpg", "./assets/projects/ripple/sK0bcDZ.jpg"]
   },
   {
     id: "pancaketower",
     title: "Pancake Tower",
-    description: "A puzzle game with level creation support where the player has to perform different tasks across two gamemodes: Puzzle and Maze.",
+    description: "An isometric physics-based puzzle game. Features two main gameplay modes: a physics stacking Puzzle mode and an obstacle navigation Maze mode. Includes an in-game sandbox level editor that lets players build, test, save, and share their own custom level designs.",
+    techStack: "Unity 3D • C#",
     staticImage: "./assets/projects/pancaketower/ss1.png",
     animatedImage: "./assets/projects/pancaketower/menu.gif",
     github: "https://github.com/mehanix/PancakeTower",
-    demo: "https://github.com/mehanix/PancakeTower",
+    demo: "https://github.com/mehanix/PancakeTower/releases",
     photos: ["./assets/projects/pancaketower/menu.gif", "./assets/projects/pancaketower/ss1.png", "./assets/projects/pancaketower/ss2.png", "./assets/projects/pancaketower/ss3.png"]
   },
   {
     id: "downbeat",
     title: "Downbeat",
-    description: "A small playable virtual piano written in C++ using SFML. Record, save, load and play songs.",
+    description: "A desktop virtual piano application. Enables real-time digital audio playback controlled via keyboard or mouse input with low latency. Features a built-in song recorder that captures key presses and timing, allowing users to save their compositions to disk and reload them for playback.",
+    techStack: "C++ • SFML",
     staticImage: "./assets/projects/downbeat/screenshot1.png",
     animatedImage: "./assets/projects/downbeat/screenshot1.png",
     github: "https://github.com/mehanix/Downbeat",
-    demo: "https://github.com/mehanix/Downbeat",
     photos: ["./assets/projects/downbeat/screenshot1.png"]
   },
   {
     id: "caverun",
     title: "Cave Run",
-    description: "A hardware game written in C++ for Arduino with an 8x8 LED matrix. Escape as many rooms as you can in 60 seconds by collecting keys and using your radar to avoid buried bombs!",
+    description: "A 2-bit retro arcade dungeon escape game built for microcontroller hardware. Players navigate procedurally generated rooms to collect keys while using an LCD proximity radar to detect and avoid hidden landmines before the 60-second timer expires.",
+    techStack: "C++ • Arduino • 8x8 LED Matrix • 16x2 LCD • Joystick • Piezo Buzzer",
     staticImage: "./assets/projects/caverun/build.png",
     animatedImage: "./assets/projects/caverun/build.png",
     github: "https://github.com/mehanix/Cave-Run",
-    demo: "https://github.com/mehanix/Cave-Run",
     photos: ["https://www.youtube.com/watch?v=kI80q4XZILo", "./assets/projects/caverun/logo.png", "./assets/projects/caverun/instructions.png", "./assets/projects/caverun/build.png"]
   },
   {
     id: "bubblemancer",
     title: "BubbleMancer",
-    description: "A Global Game Jam 2024 game where a BubbleMancer climbs the ancient Wizard Spire to prove his peers wrong.",
+    description: "A 2D platformer created for Global Game Jam 2024 centered around a wizard climbing the ancient Wizard Spire. Features bubble-shooting physics where players generate floating bubbles to create temporary step platforms, launch across gaps, and solve vertical mobility puzzles. Combines tight platforming controls with lighthearted narrative storytelling and obstacle traversal.",
+    techStack: "Godot Engine",
     staticImage: "./assets/projects/bubblemancer/image_0.png",
     animatedImage: "./assets/projects/bubblemancer/image_1.png",
     github: "https://github.com/mehanix/bubblemancer",
@@ -78,7 +81,8 @@ const projectsData = [
   {
     id: "dhrw",
     title: "DHRW ~ Visual Data Pipelines",
-    description: "A proof-of-concept for a low-code, IaaS platform to let you visually create data processing pipelines and deploy them to the cloud via Docker containers.",
+    description: "A proof-of-concept visual IaaS platform for designing and deploying automated data processing pipelines. Allows users to visually connect node graphs to represent data flows and automatically compile and deploy them to cloud containers.",
+    techStack: "React • Meteor.js • Python • RabbitMQ • Docker",
     staticImage: "./assets/projects/dhrw/image_0.png",
     animatedImage: "./assets/projects/dhrw/image_1.png",
     containImage: true,
@@ -89,7 +93,8 @@ const projectsData = [
   {
     id: "blackout",
     title: "Blackout",
-    description: "A randomly-generated maze game where you need to escape dark mazes, while equipped with only a lantern.",
+    description: "A 2D maze exploration and survival game featuring procedurally generated labyrinths. Players must navigate completely dark, randomly generated mazes equipped only with a lantern that casts dynamic line-of-sight lighting onto surrounding walls. Focuses on spatial awareness, atmospheric tension, and finding hidden keys to unlock the maze exit.",
+    techStack: "Java • Greenfoot • Procedural Generation",
     staticImage: "./assets/projects/blackout/image_0.png",
     animatedImage: "./assets/projects/blackout/image_0.png",
     github: "https://github.com/mehanix/Blackout",
@@ -99,7 +104,8 @@ const projectsData = [
   {
     id: "tidycobra",
     title: "TidyCobra",
-    description: "A Python-based utility that automates the sorting of your files into designated folders like Pictures, Music, Documents, etc., keeping your folders organized.",
+    description: "A Python desktop automation utility designed to clean up and organize cluttered folders like Downloads and Desktop. Scans target directories and automatically routes files into categorized subfolders (such as Documents, Images, Audio, and Archives) based on file extensions and customizable regex rules. Includes dry-run preview modes, safe non-destructive file handling, and background folder watching options.",
+    techStack: "Python",
     staticImage: "./assets/projects/tidycobra/ui_1.png",
     animatedImage: "./assets/projects/tidycobra/ui_1.png",
     containImage: true,
@@ -156,6 +162,7 @@ function generateDOM() {
         <div class="portfolio-list-info">
           <h3>${project.title}</h3>
           <p>${project.description}</p>
+          <div class="portfolio-list-tech"><span class="tech-stack-label">Tech Stack:</span> ${project.techStack}</div>
         </div>
       </div>
     `;
@@ -167,6 +174,112 @@ function generateDOM() {
 }
 
 generateDOM();
+
+// --- Interactive Carousel Drag & Infinite Scroll ---
+const linearCarousel = document.getElementById('linear-carousel');
+let carouselOffset = 0;
+let isMouseDown = false;
+let isDragging = false;
+let startX = 0;
+let dragStartOffset = 0;
+let dragDistance = 0;
+let isHovered = false;
+const baseSpeed = 0.6; // Scroll speed in pixels per frame
+
+function animateCarousel() {
+  if (mainCarouselTrack && mainCarouselTrack.children.length > 0) {
+    const halfWidth = mainCarouselTrack.scrollWidth / 2;
+    
+    // Auto-scroll when not dragging, not hovered, and no modal open
+    if (!isMouseDown && !isHovered && !document.body.classList.contains('modal-open')) {
+      carouselOffset -= baseSpeed;
+    }
+
+    // Seamless infinite wrap-around
+    if (halfWidth > 0) {
+      while (carouselOffset <= -halfWidth) {
+        carouselOffset += halfWidth;
+      }
+      while (carouselOffset > 0) {
+        carouselOffset -= halfWidth;
+      }
+    }
+
+    mainCarouselTrack.style.transform = `translateX(${carouselOffset}px)`;
+  }
+  requestAnimationFrame(animateCarousel);
+}
+requestAnimationFrame(animateCarousel);
+
+// Mouse & Touch Drag Interaction
+if (linearCarousel) {
+  linearCarousel.addEventListener('mouseenter', () => { isHovered = true; });
+  linearCarousel.addEventListener('mouseleave', () => {
+    isHovered = false;
+    if (isMouseDown) {
+      isMouseDown = false;
+      linearCarousel.classList.remove('is-dragging');
+    }
+  });
+
+  // Mouse Drag
+  linearCarousel.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return;
+    isMouseDown = true;
+    isDragging = false;
+    startX = e.clientX;
+    dragStartOffset = carouselOffset;
+    dragDistance = 0;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isMouseDown) return;
+    const dx = e.clientX - startX;
+    dragDistance = Math.abs(dx);
+    if (dragDistance > 4) {
+      isDragging = true;
+      linearCarousel.classList.add('is-dragging');
+    }
+    carouselOffset = dragStartOffset + dx;
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isMouseDown) {
+      isMouseDown = false;
+      linearCarousel.classList.remove('is-dragging');
+      setTimeout(() => { isDragging = false; dragDistance = 0; }, 50);
+    }
+  });
+
+  // Touch Drag (Mobile)
+  linearCarousel.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    isMouseDown = true;
+    isDragging = false;
+    startX = e.touches[0].clientX;
+    dragStartOffset = carouselOffset;
+    dragDistance = 0;
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isMouseDown || e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - startX;
+    dragDistance = Math.abs(dx);
+    if (dragDistance > 4) {
+      isDragging = true;
+      linearCarousel.classList.add('is-dragging');
+    }
+    carouselOffset = dragStartOffset + dx;
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    if (isMouseDown) {
+      isMouseDown = false;
+      linearCarousel.classList.remove('is-dragging');
+      setTimeout(() => { isDragging = false; dragDistance = 0; }, 50);
+    }
+  });
+}
 
 // --- Preload Critical Assets ---
 const imagesToPreload = [];
@@ -210,6 +323,11 @@ document.getElementById('modal-next')?.addEventListener('click', () => {
 
 // Event Delegation for all .project-trigger elements
 document.addEventListener('click', (e) => {
+  if (isDragging || dragDistance > 4) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
+    return;
+  }
   const trigger = e.target.closest('.project-trigger');
   if (trigger) {
     const projectId = trigger.getAttribute('data-id');
@@ -217,7 +335,15 @@ document.addEventListener('click', (e) => {
     
     if (project) {
       if (projectModalTitle) projectModalTitle.textContent = project.title;
-      if (projectModalDesc) projectModalDesc.textContent = project.description;
+      if (projectModalDesc) {
+        projectModalDesc.innerHTML = `
+          <p class="project-modal-text">${project.description}</p>
+          <hr class="project-divider" />
+          <div class="project-tech-stack">
+            <span class="tech-stack-label">Tech Stack:</span> ${project.techStack}
+          </div>
+        `;
+      }
       if (projectModalGithub) projectModalGithub.href = project.github;
       if (projectModalDemo) projectModalDemo.href = project.demo;
       
@@ -267,7 +393,7 @@ document.addEventListener('keydown', (e) => {
 
 // --- cables.gl Lazy Loading ---
 const cablesPatches = [
-  '/cables/visual1/js/patch.js' // The original visual
+  '/cables/visual1/js/patch.js'
 ];
 let currentPatchIndex = Math.floor(Math.random() * cablesPatches.length);
 let currentLoadedPatchUrl = null;
