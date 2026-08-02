@@ -701,6 +701,9 @@ hr.project-divider {
 .modal-content.about-modal-content {
   max-width: 850px;
   width: 90%;
+  max-height: calc(100vh - 3rem);
+  max-height: calc(100dvh - 3rem);
+  overflow-y: auto;
   padding: 3.5rem;
 }
 
@@ -954,12 +957,16 @@ p {
   }
 
   .about-photo-wrapper {
-    max-width: 200px;
+    max-width: 170px;
     margin: 0 auto;
   }
 
   .modal-content.about-modal-content {
-    padding: 2rem 1.5rem;
+    width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    padding: 2rem 1.25rem;
   }
 
   .cablesContainer > div,
