@@ -121,6 +121,7 @@ const modalPortfolioList = document.getElementById('modal-portfolio-list');
 const modalProjectDetails = document.getElementById('modal-project-details');
 const modalShowreel = document.getElementById('modal-showreel');
 const modalContact = document.getElementById('modal-contact');
+const modalAbout = document.getElementById('modal-about');
 
 function openModal(modal) {
   modal.classList.remove('hidden');
@@ -375,6 +376,11 @@ document.addEventListener('click', (e) => {
 
 // --- Buttons & Closers ---
 document.getElementById('btn-portfolio')?.addEventListener('click', () => openModal(modalPortfolioList));
+document.getElementById('btn-about')?.addEventListener('click', () => openModal(modalAbout));
+document.getElementById('btn-about-contact')?.addEventListener('click', () => {
+  closeModal(modalAbout);
+  openModal(modalContact);
+});
 document.getElementById('btn-showreel')?.addEventListener('click', () => {
   openModal(modalShowreel);
   document.getElementById('showreel-video')?.play();
