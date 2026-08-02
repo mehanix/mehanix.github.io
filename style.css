@@ -278,6 +278,12 @@ body::before {
   padding-right: 2rem;
   width: max-content;
   will-change: transform;
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
 }
 
 .carousel-item {
