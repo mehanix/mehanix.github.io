@@ -2,14 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicoleta Ciaușu - Creative Code / Interactive Media / Software Engineering</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nicoleta.cc/" />
+    <meta property="og:title" content="Nicoleta Ciaușu - Creative Code / Interactive Media / Software Engineering" />
+    <meta property="og:description" content="Interactive Portfolio | Explore my journey across software engineering, interactive media, and creative coding." />
+    <meta property="og:image" content="https://nicoleta.cc/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nicoleta.cc/" />
+    <meta property="twitter:title" content="Nicoleta Ciaușu - Creative Code / Interactive Media / Software Engineering" />
+    <meta property="twitter:description" content="Interactive Portfolio | Explore my journey across software engineering, interactive media, and creative coding." />
+    <meta property="twitter:image" content="https://nicoleta.cc/og-image.png" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-DQL-ao7G.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DIGxImi_.css">
+    <!-- Privacy-focused cookie-less analytics -->
+    <script data-goatcounter="https://nicoleta.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script type="module" crossorigin src="/assets/index-DSnjwndC.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DGOFmlvX.css">
   </head>
   <body>
     <!-- cables.gl background -->
@@ -39,6 +56,8 @@
             </span>
           </h1>
           <nav class="nav-buttons">
+            <button id="btn-about" class="btn">about</button>
+            <span class="separator">•</span>
             <button id="btn-portfolio" class="btn">portfolio</button>
             <span class="separator">•</span>
             <button id="btn-showreel" class="btn" style="display: none;">showreel</button>
@@ -99,10 +118,39 @@
           <div class="video-placeholder" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: white; text-align: center; width: 100%;">
             <h2>Coming Soon</h2>
             <p>Stay tuned for the new showreel!</p>
-            <!-- <video id="showreel-video" controls>
-              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-              Your browser does not support HTML video.
-            </video> -->
+          </div>
+        </div>
+      </div>
+
+      <div id="modal-about" class="modal hidden">
+        <div class="modal-content about-modal-content">
+          <button class="close-btn">&times;</button>
+          
+          <div class="about-grid">
+            <div class="about-photo-wrapper">
+              <span class="tape-strip tape-tl"></span>
+              <span class="tape-strip tape-tr"></span>
+              <span class="tape-strip tape-bl"></span>
+              <span class="tape-strip tape-br"></span>
+              <img src="./assets/portrait.jpg" alt="Nicoleta Ciaușu" class="about-photo" id="about-photo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'400\' viewBox=\'0 0 300 400\'><rect width=\'300\' height=\'400\' fill=\'%23111115\'/><circle cx=\'150\' cy=\'160\' r=\'60\' fill=\'%23222228\'/><path d=\'M60 340 C60 250, 240 250, 240 340 Z\' fill=\'%23222228\'/><text x=\'50%25\' y=\'88%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23666677\' font-family=\'Space Grotesk, sans-serif\' font-size=\'14\' letter-spacing=\'2\'>PORTRAIT PHOTO</text></svg>';">
+            </div>
+            
+            <div class="about-text-container">
+              <div class="modal-tag">SOFTWARE ENGINEER / CREATIVE TECHNOLOGIST</div>
+              <h2>ABOUT ME</h2>
+              
+              <p class="about-lead">
+                I like computers and art, so I build where both worlds meet.
+              </p>
+
+              <p class="about-body">
+                I'm a software engineer, indie developer, and open-source enthusiast based in Bucharest. My work spans interactive 2D/3D tools, game development, and open-source software, driven by a desire to build things with the care and attention they deserve. Lately, I'm exploring creative technologies for performing arts and media, connecting generative code, sound, and physical environments.
+              </p>
+
+              <div class="about-links">
+                <button class="btn" id="btn-about-contact">contact</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -111,21 +159,19 @@
         <div class="modal-content contact-content" style="text-align: center;">
           <button class="close-btn">&times;</button>
           <h2 style="margin-bottom: 0.5rem;">Contact</h2>
-          <p style="margin-bottom: 2.5rem; opacity: 0.7; font-size: 1rem; letter-spacing: 0.05em;">available for new opportunities.</p>
+          <p class="avl" style="margin-bottom: 2.5rem; opacity: 0.7; font-size: 1.1rem; letter-spacing: 0.05em; font-family: 'Cy Text', sans-serif; font-feature-settings: 'calt' 1, 'kern' 1;">available for new opportunities.</p>
           
           <div style="margin-bottom: 2rem;">
-            <a href="mailto:hello@nicoleta.cc" class="email-link" style="font-size: 1.5rem; font-weight: 300;">hello@nicoleta.cc</a>
+            <a href="mailto:hello@nicoleta.cc" class="email-link" style="font-size: 1.5rem; font-weight: 400; font-family: 'Cy Text', sans-serif; font-feature-settings: 'calt' 1, 'kern' 1;">hello@nicoleta.cc</a>
           </div>
 
           <div style="margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; justify-content: center;">
-            <a href="https://github.com/mehanix" target="_blank" rel="noopener noreferrer" class="btn">github</a>
-            <span class="separator">•</span>
-            <a href="https://linkedin.com/in/nicoleta-ciausu" target="_blank" rel="noopener noreferrer" class="btn">linkedin</a>
+            <a href="https://linkedin.com/in/nicoleta-ciausu" target="_blank" rel="noopener noreferrer" class="btn">connect on linkedin</a>
           </div>
 
           <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem; opacity: 0.5;">
             <div style="height: 1px; flex: 1; background: white;"></div>
-            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">or contact me via</span>
+            <span style="font-size: 0.8rem; letter-spacing: 0.1em; font-family: 'Cy', sans-serif;">or drop a message: </span>
             <div style="height: 1px; flex: 1; background: white;"></div>
           </div>
 
