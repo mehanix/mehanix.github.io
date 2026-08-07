@@ -291,8 +291,6 @@ projectsData.forEach(p => {
 
 let carouselHalfWidth = 0;
 let currentTranslate = 0;
-let isDragging = false;
-let startX = 0;
 let prevTranslate = 0;
 let isHovering = false;
 let isDraggingFlag = false;
